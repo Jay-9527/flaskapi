@@ -1,0 +1,440 @@
+Index: .idea/inspectionProfiles/Project_Default.xml
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+deleted file mode 100644
+--- a/.idea/inspectionProfiles/Project_Default.xml	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,70 +0,0 @@
+-<component name="InspectionProjectProfileManager">
+-  <profile version="1.0">
+-    <option name="myName" value="Project Default" />
+-    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+-      <Languages>
+-        <language minSize="54" name="Python" />
+-      </Languages>
+-    </inspection_tool>
+-    <inspection_tool class="HttpUrlsUsage" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+-      <option name="ignoredUrls">
+-        <list>
+-          <option value="http://localhost" />
+-          <option value="http://127.0.0.1" />
+-          <option value="http://0.0.0.0" />
+-          <option value="http://www.w3.org/" />
+-          <option value="http://json-schema.org/draft" />
+-          <option value="http://java.sun.com/" />
+-          <option value="http://xmlns.jcp.org/" />
+-          <option value="http://javafx.com/javafx/" />
+-          <option value="http://javafx.com/fxml" />
+-          <option value="http://maven.apache.org/xsd/" />
+-          <option value="http://maven.apache.org/POM/" />
+-          <option value="http://www.springframework.org/schema/" />
+-          <option value="http://www.springframework.org/tags" />
+-          <option value="http://www.springframework.org/security/tags" />
+-          <option value="http://www.thymeleaf.org" />
+-          <option value="http://www.jboss.org/j2ee/schema/" />
+-          <option value="http://www.jboss.com/xml/ns/" />
+-          <option value="http://www.ibm.com/webservices/xsd" />
+-          <option value="http://activemq.apache.org/schema/" />
+-          <option value="http://schema.cloudfoundry.org/spring/" />
+-          <option value="http://schemas.xmlsoap.org/" />
+-          <option value="http://cxf.apache.org/schemas/" />
+-          <option value="http://primefaces.org/ui" />
+-          <option value="http://tiles.apache.org/" />
+-          <option value="http://qndxx.bestcood.com" />
+-        </list>
+-      </option>
+-    </inspection_tool>
+-    <inspection_tool class="PyGlobalUndefinedInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+-    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+-      <option name="ignoredErrors">
+-        <list>
+-          <option value="E127" />
+-          <option value="E402" />
+-        </list>
+-      </option>
+-    </inspection_tool>
+-    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+-      <option name="ignoredErrors">
+-        <list>
+-          <option value="N802" />
+-          <option value="N801" />
+-        </list>
+-      </option>
+-    </inspection_tool>
+-    <inspection_tool class="PyRelativeImportInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+-    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+-    <inspection_tool class="PyUnboundLocalVariableInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+-    <inspection_tool class="PyUnreachableCodeInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+-    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="false" level="WARNING" enabled_by_default="false">
+-      <option name="ignoredIdentifiers">
+-        <list>
+-          <option value="_class_table_.CORS" />
+-          <option value="mail.mail" />
+-        </list>
+-      </option>
+-    </inspection_tool>
+-  </profile>
+-</component>
+\ No newline at end of file
+Index: app.py
+===================================================================
+diff --git a/app.py b/app.py
+deleted file mode 100644
+--- a/app.py	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,39 +0,0 @@
+-"""
+-这里是创建程序和实例化程序
+-"""
+-import os
+-
+-from flask_sqlalchemy import SQLAlchemy
+-from flask import Flask
+-from Config import configs
+-from modelu import Users_bp
+-from modelu import Index_bp
+-
+-# defined one cut
+-# class user1:
+-#     {'type', '1', 'name', 'password', 'status', {'massge': '200'}}
+-# app = APIFlask(__name__, docs_ui='redoc')
+-
+-# 定义数据库
+-db = SQLAlchemy()
+-
+-
+-def create_app(path=None):
+-    if path is None:
+-        path = os.getenv("FLASK_CONFIG", "defaults")
+-    app = Flask(__name__)
+-    app.config.from_object(configs[path])
+-    configs[path].init_app(app)
+-    # 注册蓝图
+-    app.register_blueprint(Users_bp)
+-    app.register_blueprint(Index_bp)
+-    return app
+-
+-
+-# 初始化好项目
+-# app = Flask(__name__)
+-# app.config.from_object(config[config])
+-# db.init_app(app)  # 这里是将db绑定到项目中
+-
+-
+-
+Index: modelu/server/index.py
+===================================================================
+diff --git a/modelu/server/index.py b/modelu/server/index.py
+deleted file mode 100644
+--- a/modelu/server/index.py	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,16 +0,0 @@
+-"""
+-@Project ：apiflask 
+-@File    ：index.py
+-@Author  ：AiNiSuBing
+-@Date    ：2022/7/10 13:13 
+-"""
+-from flask import Blueprint
+-
+-# users API
+-
+-bp = Blueprint("index", __name__, url_prefix="/")
+-
+-
+-@bp.route("/")
+-def login():
+-    return "首页 API"
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,8 +0,0 @@
+-# 默认忽略的文件
+-/shelf/
+-/workspace.xml
+-# 基于编辑器的 HTTP 客户端请求
+-/httpRequests/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+Index: .idea/apiflask.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/apiflask.iml b/.idea/apiflask.iml
+deleted file mode 100644
+--- a/.idea/apiflask.iml	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,21 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="PYTHON_MODULE" version="4">
+-  <component name="Flask">
+-    <option name="enabled" value="true" />
+-  </component>
+-  <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$">
+-      <excludeFolder url="file://$MODULE_DIR$/venv" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-  <component name="TemplatesService">
+-    <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
+-    <option name="TEMPLATE_FOLDERS">
+-      <list>
+-        <option value="$MODULE_DIR$/templates" />
+-      </list>
+-    </option>
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+deleted file mode 100644
+--- a/.idea/vcs.xml	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: msg.py
+===================================================================
+diff --git a/msg.py b/msg.py
+deleted file mode 100644
+--- a/msg.py	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,27 +0,0 @@
+-"""
+-@Project ：apiflask 
+-@File    ：msg.py
+-@Author  ：AiNiSuBing
+-@Date    ：2022/7/10 15:30 
+-程序创建
+-"""
+-import os
+-from app import create_app, db
+-from flask_migrate import Migrate, MigrateCommand
+-from flask_script import Manager, Shell
+-
+-app = create_app(os.getenv("FLASK_CONFIG") or "defaults")
+-mirgate = Migrate(app, db)
+-manager = Manager(app)
+-
+-
+-# @app.shell_context_processors
+-def make_shell_context():
+-    return dict(app=app, db=db)  # 这里映射的是写好的类，就是将DB类
+-
+-
+-manager.add_command('Shell', Shell(make_context=make_shell_context))
+-manager.add_command('db', MigrateCommand)
+-
+-if __name__ == "__main__":
+-    manager.run()
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+deleted file mode 100644
+--- a/.idea/inspectionProfiles/profiles_settings.xml	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,6 +0,0 @@
+-<component name="InspectionProjectProfileManager">
+-  <settings>
+-    <option name="USE_PROJECT_PROFILE" value="false" />
+-    <version value="1.0" />
+-  </settings>
+-</component>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,4 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (apiflask)" project-jdk-type="Python SDK" />
+-</project>
+\ No newline at end of file
+Index: Config.py
+===================================================================
+diff --git a/Config.py b/Config.py
+deleted file mode 100644
+--- a/Config.py	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,47 +0,0 @@
+-import os
+-
+-
+-class Config:
+-    DEBUG = False
+-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+-    # DATA_URL = os.getenv(os.path.join('DATABASE'))
+-    # SQLALCHEMY_DATABASE_URL = os.getenv('DATABASE_URL', 'sqlite:///' + os.path.join(app.root_path, 'data.db'))
+-    TESTING = False
+-    USERS = os.getenv("use", os.environ.get("DB_USER"))
+-    PASSWD = os.getenv("pass", os.environ.get("DB_PASS"))
+-    DB_DATABASE = os.getenv("db_database")
+-    # 平台的key作为校验。
+-    SECRET_KEY = 'suibiandingyi123131'
+-
+-    # 微信信息
+-    APPID = ''
+-    APPSERECT = ''
+-    TOKEN = ''
+-    APP_API_URL = ''
+-
+-    @staticmethod
+-    def init_app(app):
+-        pass
+-
+-
+-class ProductionConfig(Config):
+-    DB_URL = os.getenv(
+-        f"mysql+cymysql://{Config.USERS}:{Config.PASSWD}@{os.environ.get('DB_URL')}:3306/{Config.DB_DATABASE}")
+-
+-
+-class DevelopmentConfig(Config):
+-    DEBUG = True
+-    DB_URL = os.getenv("DB_URL", f"mysql+cymysql://{Config.USERS}:{Config.PASSWD}@{os.environ.get('DB_URL')}:3306/{Config.DB_DATABASE}")
+-
+-
+-class TestingConfig(Config):
+-    DB_URL = os.getenv("DB_URL", f"mysql+cymysql://{Config.USERS}:{Config.PASSWD}@{os.environ.get('DB_URL')}:3306/{Config.DB_DATABASE}")
+-    TESTING = True
+-
+-
+-configs = {
+-    'development': DevelopmentConfig,
+-    'testing': TestingConfig,
+-    'production': ProductionConfig,
+-    'defaults': DevelopmentConfig
+-}
+Index: modelu/server/user.py
+===================================================================
+diff --git a/modelu/server/user.py b/modelu/server/user.py
+deleted file mode 100644
+--- a/modelu/server/user.py	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,17 +0,0 @@
+-"""
+-@Project ：apiflask 
+-@File    ：user.py
+-@Author  ：AiNiSuBing
+-@Date    ：2022/7/10 13:06 
+-用户界面 API [ 蓝图方式管理 ]
+-"""
+-from flask import Blueprint
+-
+-# users API
+-
+-bp = Blueprint("users", __name__, url_prefix="/user")
+-
+-
+-@bp.route("/login")
+-def login():
+-    return "用户API"
+Index: modelu/__init__.py
+===================================================================
+diff --git a/modelu/__init__.py b/modelu/__init__.py
+deleted file mode 100644
+--- a/modelu/__init__.py	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,9 +0,0 @@
+-"""
+-@Project ：apiflask 
+-@File    ：__init__.py.py
+-@Author  ：AiNiSuBing
+-@Date    ：2022/7/10 11:49
+-这里是程序入口
+-"""
+-from .server.user import bp as Users_bp
+-from .server.index import bp as Index_bp
+Index: README.md
+===================================================================
+diff --git a/README.md b/README.md
+deleted file mode 100644
+--- a/README.md	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,31 +0,0 @@
+-# 环境配置项目法
+-通过设置好环境变量，以某种方法导入到项目中，为项目进行初始化做准备。
+-
+-用法： os.getenv(key, default = None) 
+-
+-参数:
+-key:表示环境变量名称的字符串
+-默认值(可选)：表示 key 不存在时默认值的字符串。如果省略，则默认设置为“无”。
+-返回类型：此方法返回一个字符串，该字符串表示环境变量键的值。如果 key 不存在，则返回默认参数的值。
+-
+-
+-> DB_URL = os.getenv("DB_URL", os.path.join(os.environ.get("DB_URL")))
+-
+-os.getenv 和 os.path.join的使用。
+-在使用getenv时，不用结合path，因为path是从文件系统中获取值，所得来的结果不是键值对的形式。
+-
+-marshmallow
+-
+-marshmallow是一个用来将复杂的orm对象与python原生数据类型之间相互转换的库，简而言之，就是实现
+-object -> dict， objects -> list， string -> dict和 string -> list。
+-
+-# 项目的配置流程
+-1. 把配置文件创建，并编写好配置文件【项目环境配置文件】
+-2. 创建application配置文件，里头存放创建APP的内容【项目启动文件】
+-3. 创建application管理文件名为：manager，里头存放项目初始化的方法和蓝图映射方法。【项目管理文件】
+-4. 创建软件包，存放模块（业务）。在里头编写__init__文件，统一管理模块。
+-5. 创建环境变量脚本。为项目提供环境变量。
+-
+-
+-error已经告诉你了 list对象不能用函数形式调用，就是不能callable。
+-简单来说就是list变量和list函数重名了。
+\ No newline at end of file
+Index: requirements.txt
+===================================================================
+diff --git a/requirements.txt b/requirements.txt
+deleted file mode 100644
+--- a/requirements.txt	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,1 +0,0 @@
+-Flask==2.1.2
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
++++ /dev/null	(revision ce3b756e88a3e7361d42d725a721ca101d425de1)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/apiflask.iml" filepath="$PROJECT_DIR$/.idea/apiflask.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
