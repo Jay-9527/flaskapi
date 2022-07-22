@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a3fd29e-61ec-4f40-976c-55b35d72d65f" name="变更" comment="1.0&#10;&#10;Signed-off-by: adiao &lt;1819192616@qq.com&gt;">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/apiflask.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelu/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelu/server/index.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modelu/server/user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/msg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="4a3fd29e-61ec-4f40-976c-55b35d72d65f" name="变更" comment="1.0&#10;&#10;Signed-off-by: adiao &lt;1819192616@qq.com&gt;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,15 +99,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/adiao/work/toolsdevelopment/py/apiflask&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/adiao/work/toolsdevelopment/py/apiflask",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Flask 服务器.Flask (msg.py)">
     <configuration name="Flask (msg.py)" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
       <module name="apiflask" />
@@ -176,7 +162,7 @@
       <workItem from="1658302414243" duration="2624000" />
       <workItem from="1658346472381" duration="128000" />
       <workItem from="1658346617746" duration="1949000" />
-      <workItem from="1658425430065" duration="278000" />
+      <workItem from="1658425430065" duration="1410000" />
     </task>
     <task id="LOCAL-00001" summary="1.0">
       <created>1658344463127</created>
@@ -220,7 +206,28 @@
       <option name="project" value="LOCAL" />
       <updated>1658346172481</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="1.0&#10;&#10;Signed-off-by: adiao &lt;1819192616@qq.com&gt;">
+      <created>1658425767709</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1658425767709</updated>
+    </task>
+    <task id="LOCAL-00008" summary="1.0&#10;&#10;Signed-off-by: adiao &lt;1819192616@qq.com&gt;">
+      <created>1658425913285</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1658425913285</updated>
+    </task>
+    <task id="LOCAL-00009" summary="1.0&#10;&#10;Signed-off-by: adiao &lt;1819192616@qq.com&gt;">
+      <created>1658425924454</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1658425924454</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
